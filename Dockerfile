@@ -38,12 +38,11 @@ RUN mkdir /etc/julia && \
 ENV JULIA_DEPOT_PATH=/opt/julia
 
 RUN mkdir $JULIA_DEPOT_PATH && \
-    chown $NB_USER $JULIA_DEPOT_PATH && \
-    fix-permissions $JULIA_DEPOT_PATH
+    chown $NB_USER $JULIA_DEPOT_PATH
 
 USER $NB_UID
 
-# Install IJulia as jovyan and then move the kernelspec out
+# install IJulia as jovyan and then move the kernelspec out
 # to the system share location. Avoids problems with runtime UID change not
 # taking effect properly on the .local folder in the jovyan home dir.
 RUN julia -e 'using Pkg; \
@@ -52,5 +51,12 @@ RUN julia -e 'using Pkg; \
     # move kernelspec out of home \
     mv $HOME/.local/share/jupyter/kernels/julia* $CONDA_DIR/share/jupyter/kernels/ && \
     chmod -R go+rx $CONDA_DIR/share/jupyter && \
-    rm -rf $HOME/.local && \
-    fix-permissions $JULIA_DEPOT_PATH $CONDA_DIR/share/jupyter
+    rm -rf $HOME/.local
+
+# copy files
+COPY tutorial $HOME/tutorial
+RUN rmdir $HOME/work
+
+USER root
+RUN fix-permissions $HOME
+USER $NB_UID
