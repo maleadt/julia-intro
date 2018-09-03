@@ -1,6 +1,12 @@
 [[Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
+[[BenchmarkTools]]
+deps = ["JSON", "Pkg", "Printf", "Statistics", "Test"]
+git-tree-sha1 = "623941d5eb10e440eb12c97183f96f2f0191d0ca"
+uuid = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
+version = "0.4.0"
+
 [[BinaryProvider]]
 deps = ["Libdl", "Pkg", "SHA", "Test"]
 git-tree-sha1 = "b530fbeb6f41ab5a83fbe3db1fcbe879334bcd2d"
@@ -35,10 +41,10 @@ uuid = "8ba89e20-285c-5b6f-9357-94700520ee1b"
 uuid = "7b1f6079-737a-58dc-b8bc-7a2ca5c1b5ee"
 
 [[IJulia]]
-deps = ["Compat", "Conda", "InteractiveUtils", "JSON", "Markdown", "MbedTLS", "Pkg", "REPL", "Random", "UUIDs", "ZMQ"]
-git-tree-sha1 = "39eae8b2ba35ae65eac70ee642c4a6e1340c3612"
+deps = ["Compat", "Conda", "InteractiveUtils", "JSON", "Markdown", "MbedTLS", "Pkg", "REPL", "Random", "SoftGlobalScope", "UUIDs", "ZMQ"]
+git-tree-sha1 = "def2e9ee9963ee935dab64fb0d971042c384dbfd"
 uuid = "7073ff75-c697-5162-941a-fcdaad2a7d2a"
-version = "1.9.3"
+version = "1.10.0"
 
 [[InteractiveUtils]]
 deps = ["LinearAlgebra", "Markdown"]
@@ -104,6 +110,12 @@ uuid = "1a1011a3-84de-559e-8e89-a11a2f7dc383"
 
 [[Sockets]]
 uuid = "6462fe0b-24de-5631-8697-dd941f90decc"
+
+[[SoftGlobalScope]]
+deps = ["Test"]
+git-tree-sha1 = "7a26939866a09ed6754fb35e4056d0f2ff740b3b"
+uuid = "b85f4697-e234-5449-a836-ec8e2f98b302"
+version = "1.0.2"
 
 [[SparseArrays]]
 deps = ["LinearAlgebra", "Random"]
