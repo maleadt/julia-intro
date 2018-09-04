@@ -1,12 +1,6 @@
 [[Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
-[[BenchmarkTools]]
-deps = ["JSON", "Pkg", "Printf", "Statistics", "Test"]
-git-tree-sha1 = "623941d5eb10e440eb12c97183f96f2f0191d0ca"
-uuid = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
-version = "0.4.0"
-
 [[BinaryProvider]]
 deps = ["Libdl", "Pkg", "SHA", "Test"]
 git-tree-sha1 = "b530fbeb6f41ab5a83fbe3db1fcbe879334bcd2d"
